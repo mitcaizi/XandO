@@ -1,4 +1,4 @@
-//Author:
+//Author:Jingwen Ling
 #include <iostream>
 
 using namespace std;
@@ -48,6 +48,17 @@ int main()
     //1-B-1.  turn should be assigned the value 'O'
     //1-C.  In any other case, then...
     //1-C-1.  turn should be assigned the value 'X'
+    else
+    {
+    board[row][column]=turn;
+    if (turn=='X')
+    {
+    turn = 'O';
+    }
+    else
+    {
+    turn = 'X';
+    }
     
     cout<<"\nBOARD\n-----\n";
     //TODO: Print the current board
@@ -58,6 +69,16 @@ int main()
     //1-A-2. Display a space
     //1-B. Display an newline to move to the next row of the board
     
+    for (int r=0; r<2; r++)
+    {
+    for (int c=0; c<2; c++)
+    {
+    cout<<board[row][column];
+    }
+    cout<<endl;
+    }
+}
+
   }while( playing );
 
   cout<<"Goodbye!\n";
