@@ -59,24 +59,23 @@ int main()
                         {
                                 turn = 'X';
                         }
+                }
+                cout<<"\nBOARD\n-----\n";
+                //TODO: Print the current board
+                //Outline
+                //1. Traverse through each row, calling the current row r
+                //1-A. Traverse through each column in row r, calling the current column c
+                //1-A-1.  Display the value of the board at location of r and c
+                //1-A-2. Display a space
+                //1-B. Display an newline to move to the next row of the board
 
-                        cout<<"\nBOARD\n-----\n";
-                        //TODO: Print the current board
-                        //Outline
-                        //1. Traverse through each row, calling the current row r
-                        //1-A. Traverse through each column in row r, calling the current column c
-                        //1-A-1.  Display the value of the board at location of r and c
-                        //1-A-2. Display a space
-                        //1-B. Display an newline to move to the next row of the board
-
-                        for (int r=0; r<3; r++)
+                for (int r=0; r<3; r++)
+                {
+                        for (int c=0; c<3; c++)
                         {
-                                for (int c=0; c<3; c++)
-                                {
-                                        cout<<board[r][c];
-                                }
-                                cout<<endl;
+                                cout<<board[r][c]<<' ';
                         }
+                        cout<<endl;
                 }
 
         }while( playing );
