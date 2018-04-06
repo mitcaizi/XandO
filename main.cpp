@@ -22,14 +22,14 @@ int main()
         int row;
         int column;
         bool playing = true; //Continue playing by default
-
+        char winner = ' ';
         do
         {
                 cout<<turn<<"'s turn.\n";
                 cout<<"Which column and row (0-2, or -1 for both to quit)?\n";
                 cin>>column;
                 cin>>row;
-
+                winner = turn;
                 //Make sure the user isn't quitting
                 if(column == QUIT && row == QUIT)
                 {
@@ -61,6 +61,7 @@ int main()
                         }
                 }
                 cout<<"\nBOARD\n-----\n";
+
                 //TODO: Print the current board
                 //Outline
                 //1. Traverse through each row, calling the current row r
@@ -76,6 +77,11 @@ int main()
                                 cout<<board[r][c]<<' ';
                         }
                         cout<<endl;
+                }
+                if ((board[0][0]==board[0][1]&&board[0][0]==board[0][2]&&board[0][0]==winner)||(board[1][0]==board[1][1]&&board[1][0]==board[1][2]&&board[1][0]==winner)|| (board[2][0]==board[2][1]&&board[2][0]==board[2][2]&&board[2][0]==winner)|| (board[0][0]==board[1][0]&&board[0][0]==board[2][0]&&board[0][0]==winner)|| (board[0][1]==board[1][1]&&board[0][1]==board[2][1]&&board[0][1]==winner)|| (board[0][2]==board[1][2]&&board[0][2]==board[2][2]&&board[0][2]==winner) ||(board[0][0]==board[1][1]&&board[0][0]==board[2][2]&&board[0][0]==winner)|| (board[0][2]==board[1][1]&&board[0][2]==board[2][0]&&board[0][2]==winner))
+                {
+                playing = false;
+                cout<<"Winner is "<<winner<<endl;
                 }
 
         }while( playing );
